@@ -31,9 +31,9 @@ Usage:
 
 This program is designed to be used from the command line.  You should be able to see most options by typing:
 
-        RGB_Driver.py --help
-
-        usage: RGB_Driver.py [-h] [-r RED RED] [-g GREEN GREEN] [-b BLUE BLUE]
+```
+./RGB_Driver.py --help
+usage: RGB_Driver.py [-h] [-r RED RED] [-g GREEN GREEN] [-b BLUE BLUE]
                      [-s STEPS] [-d DELAY] [-o]
                      [--red-pin {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15}]
                      [--green-pin {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15}]
@@ -41,36 +41,43 @@ This program is designed to be used from the command line.  You should be able t
                      [--repeat REPEAT] [--reverse] [--random] [--time TIME]
                      [--max-random-walk MAX_RANDOM_WALK]
 
-        drive a rgb led strip through a pwm module
+drive a rgb led strip through a pwm module
 
-        optional arguments:
-          -h, --help            show this help message and exit
-          -r RED RED, --red RED RED
-                        The beginning and end values for red.
-          -g GREEN GREEN, --green GREEN GREEN
-                        The beginning and end values for green.
-          -b BLUE BLUE, --blue BLUE BLUE
-                        The beginning and end values for blue.
-          -s STEPS, --steps STEPS
-                        Number of steps in the fade.
-          -d DELAY, --delay DELAY
-                        Number of seconds between the steps, can be a float
-          -o, --turn-off        Turn off when the fade is over
-          --red-pin {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15}
-                                The red pwm pin
-          --green-pin {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15}
-                                The green pwm pin
-          --blue-pin {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15}
-                                The blue pwm pin
-          --repeat REPEAT       Repeat the fade this many times
-          --reverse             Reverse the fade, to return back to the initial state
-          --random              Move around randomly between the beginning and end
-                                values. Use with --time
-          --time TIME           Used with --random. Move randomly for this many
-                                seconds
-          --max-random-walk MAX_RANDOM_WALK
-                                The max that each channel will be allowed to change
-                                between steps
+optional arguments:
+  -h, --help            show this help message and exit
+  -r RED RED, --red RED RED
+                        The beginning and end values for red in fade mode. Max
+                        and min values for red in random mode.
+  -g GREEN GREEN, --green GREEN GREEN
+                        The beginning and end values for green in fade mode.
+                        Max and min values for green in random mode..
+  -b BLUE BLUE, --blue BLUE BLUE
+                        The beginning and end values for blue in fade mode.
+                        Max and min values for blue in random mode..
+  -s STEPS, --steps STEPS
+                        Number of steps in the fade. Not used with --random
+  -d DELAY, --delay DELAY
+                        Number of seconds between the steps or random changes,
+                        can be a float
+  -o, --turn-off        Turn off when the fade or random event is over.
+  --red-pin {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15}
+                        The red pwm pin
+  --green-pin {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15}
+                        The green pwm pin
+  --blue-pin {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15}
+                        The blue pwm pin
+  --repeat REPEAT       Repeat the fade this many times. Unused with --random.
+  --reverse             Reverse the fade, to return back to the initial state.
+                        Unused with --random.
+  --random              Move around randomly between the max and min values
+                        specified with --red --green and --blue. Use with
+                        --time and --max-random-walk
+  --time TIME           Used with --random. Move randomly for this many
+                        seconds
+  --max-random-walk MAX_RANDOM_WALK
+                        The max that each channel will be allowed to change
+                        between steps in random mode.
+```
                         
 
 NOTE: You will likely need to run this as root or use sudo because of the sudo interface.
