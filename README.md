@@ -80,7 +80,13 @@ optional arguments:
 ```
                         
 
-NOTE: You will likely need to run this as root or use sudo because of the sudo interface.
+NOTE: You will likely need to run this as root or use sudo because of the I2C interface, unless you jump through a bunch more hoops.  Using sudo can be tricky
+because of the PYTHONPATH.  You can do something like this, though:
+
+        sudo PYTHONPATH=$PYTHONPATH:/path/to/Adafruit_PWM_Servo_Driver ./RGB_Driver.py -r 0 4095 --repeat 3 -o
+        
+Alternatively, you could just copy RGB_Driver.py into the Adafruit_PWM_Servo_Driver directory to save yourself some grief.        
+
 
 There are two modes: 
 
