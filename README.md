@@ -8,7 +8,7 @@ http://www.adafruit.com/products/815
 
 The Circuit:
 ------------
-I will try to post some picture to help on setting up the circuit, but here's the basic idea:
+Here's the basic idea:
 
   - Hook up the pi to the PCA9685 breakout board using the I2C connections.  
   - Connect the pi's 3.3V output to VCC on the PCA9685 breakout board.  Leave V+ floating.
@@ -19,6 +19,8 @@ I will try to post some picture to help on setting up the circuit, but here's th
       - Instead of using the PWM outputs from the arduino, we'll use the PWM outputs from the PCA9685.
       - Connect up the PWM output 0 to the MOSFET with the red wire from the LED strip.  
            Output 1 goes to green, output 2 goes to blue.
+
+[Here's a picture](http://github.com/smithje/RGB_LED_Driver/blob/master/LED_Strip_bb.png)
 
 
 Dependencies:
