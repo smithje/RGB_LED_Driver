@@ -129,3 +129,13 @@ Examples:
 6. Seizure!
 
         sudo ./RGB_Driver.py -r 0 4095 -g 0 4095 -b 4095 0  --delay 0.01  -o --random --max-random-walk 2000 --time 10
+        
+[Here's a video showing these examples in order](http://youtu.be/62QUJVkC3B4)
+
+
+What's Next?
+------------
+
+The PWM breakout board has 16 outputs, so, with the right power supply, we could drive up to 5 strips at the same time.
+
+I plan on updating the code to allow for driving multiple strips.
